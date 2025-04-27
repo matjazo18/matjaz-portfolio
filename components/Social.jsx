@@ -62,10 +62,10 @@ const soicals = [
   },
 ];
 
-const Social = () => {
+const Social = ({ containerStyle }) => {
   const pathname = usePathname();
   return (
-    <div className="flex gap-4 items-center justify-center mt-8 mb-8 ">
+    <div className={containerStyle}>
       {soicals.map((social, index) => {
         return (
           <Link href={social.path} key={index}>
