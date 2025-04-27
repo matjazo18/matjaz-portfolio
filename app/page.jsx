@@ -3,6 +3,7 @@ import { FiDownload } from "react-icons/fi";
 import Social from "@/components/Social";
 import Image from "next/image";
 import Photo from "@/components/Photo";
+import Stats from "@/components/Stats";
 
 // kle moras samo order spremenit ce te bo kej fukal
 
@@ -50,6 +51,9 @@ const Home = () => {
           <div className="order-1 xl:order-1 mb-8 xl:mb-0 mt-10 ">
             <Photo />
           </div>
+        </div>
+        <div className="mt-12">
+          <Stats />
         </div>
       </div>
     </section>
