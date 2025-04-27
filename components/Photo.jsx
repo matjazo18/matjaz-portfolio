@@ -14,7 +14,7 @@ const Photo = () => {
           transition: { delay: 2, duration: 0.4, ease: "easeIn" },
         }}
       >
-        <div className="w-[208px] h-[258px] xl:w-[400px] xl:h-[400px] mix-blend-lighten ">
+        <div className="w-[200px] h-[200px] xl:w-[450px] xl:h-[450px] mix-blend-lighten mb-8  ">
           {" "}
           <Image
             src={foto}
@@ -22,7 +22,7 @@ const Photo = () => {
             width={350} // Adjust width as needed
             height={350} // Adjust height as needed
             quality={100}
-            className="object-contain"
+            className="object-contain border-r-4  border-accent rounded-2xl"
           />
         </div>
       </motion.div>

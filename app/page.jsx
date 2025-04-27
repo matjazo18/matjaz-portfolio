@@ -9,7 +9,7 @@ import Photo from "@/components/Photo";
 const Home = () => {
   return (
     <section className="h-full">
-      <div className="container mx-auto h-screen mt-10">
+      <div className="container mx-auto h-screen  xl:mt-10">
         <div className="flex flex-col xl:flex-row justify-center items-center xl:items-start gap-4 xl:gap-8">
           {/* Photo - moves below text on mobile */}
 

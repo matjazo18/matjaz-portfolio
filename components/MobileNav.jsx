@@ -29,7 +29,7 @@ const MobileNav = () => {
         <div className=" mt-40 mb-32 text-center text-2xl">
           <Link href="/">
             <h1 className="font-semibold text-white">
-              Matjaž <span className="text-accent">.</span>
+              Matjaž<span className="text-accent">.</span>
             </h1>
           </Link>
         </div>
