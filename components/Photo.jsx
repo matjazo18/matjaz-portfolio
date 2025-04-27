@@ -14,7 +14,7 @@ const Photo = () => {
           transition: { delay: 2, duration: 0.4, ease: "easeIn" },
         }}
       >
-        <div className="w-[258px] h-[298px] xl:w-[400px] xl:h-[400px] mix-blend-lighten ">
+        <div className="w-[208px] h-[258px] xl:w-[400px] xl:h-[400px] mix-blend-lighten ">
           {" "}
           <Image
             src={foto}
