@@ -11,7 +11,7 @@ const Header = () => {
 
         <Link href="/">
           <h1 className="text-4xl font-semibold">
-            Matjaž
+            Matjažo
             <span className=" text-accent">.</span>
           </h1>
         </Link>
