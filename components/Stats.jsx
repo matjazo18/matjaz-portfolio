@@ -25,30 +25,31 @@ const Stats = () => {
   return (
     <section>
       <div className="container mx-auto">
-        <div className="flex flex-wrap gap-6 max-w-[80vw] max-auto xl:max-w-none">
-          {stats.map((item, index) => {
-            return (
-              <div
-                key={index}
-                className="flex-1 flex justify-center gap-4 items-center justifty-center xl:justify-start"
-              >
-                <CountUp
-                  end={item.num}
-                  duration={5}
-                  delay={2}
-                  className="text-4xl xl:text-6xl text-accent"
-                />
-                <p
-                  className={`${
-                    item.text.length < 15 ? " max-w-[100px]" : "max-w-[150px]"
-                  }`}
+        <div className="container mx-auto">
+          <div className="flex flex-wrap gap-10 justify-center max-w-[90vw] xl:max-w-none mx-auto">
+            {stats.map((item, index) => {
+              return (
+                <div
                   key={index}
+                  className="flex flex-col items-center flex-grow basis-[120px] text-center xl:flex-row"
                 >
-                  {item.text}
-                </p>
-              </div>
-            );
-          })}
+                  <CountUp
+                    end={item.num}
+                    duration={3}
+                    delay={0.5}
+                    className="text-4xl xl:text-6xl text-accent font-extrabold"
+                  />
+                  <p
+                    className={`mt-2 ${
+                      item.text.length < 15 ? "max-w-[100px]" : "max-w-[150px]"
+                    } text-sm xl:text-base text-white/80`}
+                  >
+                    {item.text}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
