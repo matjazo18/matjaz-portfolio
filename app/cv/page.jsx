@@ -237,15 +237,24 @@ const Cv = () => {
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {skills.description}
                 </p>
-                <ul className="grid grid-cols-2 xl:grid-cols-2 gap-[30px]">
+                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-[30px]">
                   {skills.skillList.map((skill, index) => {
                     return (
                       <li
                         key={index}
                         className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                       >
-                        <div className="">{skill.icon}</div>
-                        <span>{skill.name}</span>
+                        <TooltipProvider>
+                          <Tooltip>
+                            <TooltipTrigger>
+                              {" "}
+                              <div>{skill.icon}</div>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p>{skill.name}</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
                       </li>
                     );
                   })}
