@@ -35,21 +35,14 @@ const about = {
       fieldName: "Email",
       fieldValue: "matjaz.gazvoda@gmail.com",
     },
+
     {
-      fieldName: "Kraj bivanja",
-      fieldValue: "Dobrava, Dobrnič",
+      fieldName: "Languages",
+      fieldValue: "Slovenian, English, German",
     },
     {
-      fieldName: "Šola",
-      fieldValue: "Športna gimnazija Novo mesto",
-    },
-    {
-      fieldName: "Jeziki",
-      fieldValue: "Slovenščina, B2 Angleščina , B1 Nemščina",
-    },
-    {
-      fieldName: "Age",
-      fieldValue: "19",
+      fieldName: "School",
+      fieldValue: "Gimnazija Novo mesto",
     },
   ],
 };
@@ -237,7 +230,7 @@ const Cv = () => {
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {skills.description}
                 </p>
-                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-[30px]">
+                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                   {skills.skillList.map((skill, index) => {
                     return (
                       <li key={index}>
@@ -266,6 +259,24 @@ const Cv = () => {
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {about.description}
                 </p>
+                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
+                  {about.info.map((item, index) => {
+                    return (
+                      <li
+                        key={index}
+                        className="flex items-start justify-start xl:justify-start mx-auto xl:mx-0  gap-4"
+                      >
+                        <span className="text-white/60">
+                          {item.fieldName}
+                          <br />
+                          <span className=" text-xl text-white ">
+                            {item.fieldValue}
+                          </span>
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
             </TabsContent>
           </div>
