@@ -23,15 +23,15 @@ const projects = [
     num: "01",
     category: "frontend",
     title: "project 1",
-    description: "Write-it-down ",
+    description:
+      "I've built this page for a friend of mine who wanted a landing page for his personal finance tracker. For each user who wants to download the finance tracker, I send them an email with a copy of it and then store the user in the MongoDB database.",
     stack: [
       { name: "JavaScript" },
       { name: "Tailwind.css" },
       { name: "Next.js" },
     ],
-    image: <Image src={foto} alt="img" width={600} height={200}></Image>,
+    image: <Image src={write} alt="img" width={600} height={200}></Image>,
     live: "https://matjaz-portfolio.vercel.app/",
-    github: "https://github.com/matjazo18/matjaz-portfolio",
   },
   {
     num: "02",
@@ -43,9 +43,9 @@ const projects = [
       { name: "JavaScript" },
       { name: "Tailwind.css" },
     ],
-    image: <Image src={write} alt="img" width={800} height={400}></Image>,
-    live: "",
-    github: "",
+    image: <Image src={foto} alt="img" width={800} height={400}></Image>,
+    live: "https://matjaz-portfolio.vercel.app/",
+    github: "https://github.com/matjazo18/matjaz-portfolio",
   },
   {
     num: "03",
@@ -115,28 +115,43 @@ const Projekti = () => {
                     </Tooltip>
                   </TooltipProvider>
                 </Link>
-                <Link
-                  href={project.github}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.open(project.live, "_blank", "noopener,noreferrer");
-                  }}
-                >
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group mt-2">
-                        <BsGithub className="text-white text-3xl group-hover:text-accent " />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p className="capitalize">Live projects</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
+                {project.github ? (
+                  <Link
+                    href={project.github}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.open(
+                        project.live,
+                        "_blank",
+                        "noopener,noreferrer"
+                      );
+                    }}
+                  >
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group mt-2">
+                          <BsGithub className="text-white text-3xl group-hover:text-accent " />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p className="capitalize">Live projects</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                ) : (
+                  ""
+                )}
               </div>
             </div>
           </div>
-          <div className="w-full xl:w-[50%]">
+          <motion.div
+            className="w-full xl:w-[50%]"
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+              transition: { delay: 1, duration: 0.4, ease: "easeIn" },
+            }}
+          >
             <Swiper
               spaceBetween={30}
               slidesPerView={1}
@@ -146,14 +161,14 @@ const Projekti = () => {
               {projects.map((project, index) => {
                 return (
                   <SwiperSlide key={index} className="w-full">
-                    <div className="h-[460px] relative group flex justify-center border-2 border-accent">
+                    <div className="h-[360px] xl:h-[460px] relative group flex justify-center border-2 border-accent">
                       {project.image}
                     </div>{" "}
                   </SwiperSlide>
                 );
               })}
             </Swiper>
-          </div>
+          </motion.div>
         </div>
       </div>
     </motion.section>
