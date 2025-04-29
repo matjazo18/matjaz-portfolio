@@ -30,7 +30,7 @@ const projects = [
       { name: "Tailwind.css" },
       { name: "Next.js" },
     ],
-    image: <Image src={write} alt="img" width={600} height={200}></Image>,
+    image: write,
     live: "https://matjaz-portfolio.vercel.app/",
   },
   {
@@ -43,7 +43,7 @@ const projects = [
       { name: "JavaScript" },
       { name: "Tailwind.css" },
     ],
-    image: <Image src={foto} alt="img" width={800} height={400}></Image>,
+    image: foto,
     live: "https://matjaz-portfolio.vercel.app/",
     github: "https://github.com/matjazo18/matjaz-portfolio",
   },
@@ -57,7 +57,7 @@ const projects = [
       { name: "JavaScript" },
       { name: "Tailwind.css" },
     ],
-    image: <Image src={andraz} alt="img" width={800} height={400}></Image>,
+    image: andraz,
     live: "",
     github: "",
   },
@@ -162,7 +162,15 @@ const Projekti = () => {
                 return (
                   <SwiperSlide key={index} className="w-full">
                     <div className="h-[300px] xl:h-[460px] relative group flex justify-center border-2 border-accent">
-                      {project.image}
+                      <div></div>
+                      <div className="relative w-full h-full">
+                        <Image
+                          src={project.image}
+                          fill
+                          className="object-cover"
+                          alt={project.name}
+                        ></Image>
+                      </div>
                     </div>{" "}
                   </SwiperSlide>
                 );
