@@ -161,7 +161,7 @@ const Projekti = () => {
               {projects.map((project, index) => {
                 return (
                   <SwiperSlide key={index} className="w-full">
-                    <div className="h-[330px] xl:h-[460px] relative group flex justify-center border-2 border-accent">
+                    <div className="h-[300px] xl:h-[460px] relative group flex justify-center border-2 border-accent">
                       {project.image}
                     </div>{" "}
                   </SwiperSlide>
