@@ -28,8 +28,8 @@ const projects = [
       { name: "Next.js" },
     ],
     image: <Image src={foto} alt="img" width={200} height={200}></Image>,
-    live: "",
-    github: "",
+    live: "https://matjaz-portfolio.vercel.app/",
+    github: "https://github.com/matjazo18/matjaz-portfolio",
   },
   {
     num: "02",
@@ -91,12 +91,36 @@ const Projekti = () => {
               </ul>
 
               <div className="border border-white/20"></div>
-              <div>
-                <Link href={project.live}>
+              <div className="flex gap-4">
+                <Link
+                  href={project.live}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open(project.live, "_blank", "noopener,noreferrer");
+                  }}
+                >
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group mt-2">
                         <BsArrowUpRight className="text-white text-3xl group-hover:text-accent " />
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p className="capitalize">Live projects</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </Link>
+                <Link
+                  href={project.github}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open(project.live, "_blank", "noopener,noreferrer");
+                  }}
+                >
+                  <TooltipProvider delayDuration={100}>
+                    <Tooltip>
+                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group mt-2">
+                        <BsGithub className="text-white text-3xl group-hover:text-accent " />
                       </TooltipTrigger>
                       <TooltipContent>
                         <p className="capitalize">Live projects</p>
