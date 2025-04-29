@@ -14,7 +14,9 @@ import {
 
 import Link from "next/link";
 import Image from "next/image";
-import foto from "@/public/images/matjaz-flowers.jpg";
+import foto from "@/public/images/matjaz.jpg";
+import write from "@/public/images/write-it-down.jpg";
+import andraz from "@/public/images/andraz.jpg";
 
 const projects = [
   {
@@ -27,7 +29,7 @@ const projects = [
       { name: "Tailwind.css" },
       { name: "Next.js" },
     ],
-    image: <Image src={foto} alt="img" width={200} height={200}></Image>,
+    image: <Image src={foto} alt="img" width={600} height={200}></Image>,
     live: "https://matjaz-portfolio.vercel.app/",
     github: "https://github.com/matjazo18/matjaz-portfolio",
   },
@@ -41,7 +43,7 @@ const projects = [
       { name: "JavaScript" },
       { name: "Tailwind.css" },
     ],
-    image: <Image src={foto} alt="img" width={200} height={200}></Image>,
+    image: <Image src={write} alt="img" width={800} height={400}></Image>,
     live: "",
     github: "",
   },
@@ -55,15 +57,18 @@ const projects = [
       { name: "JavaScript" },
       { name: "Tailwind.css" },
     ],
-    image: <Image src={foto} alt="img" width={200} height={200}></Image>,
+    image: <Image src={andraz} alt="img" width={800} height={400}></Image>,
     live: "",
     github: "",
   },
 ];
-const moveToNext = () => {};
 
 const Projekti = () => {
   const [project, setProject] = useState(projects[0]);
+  const handleSlideChange = (swiper) => {
+    const current = swiper.activeIndex;
+    setProject(projects[current]);
+  };
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -131,7 +136,24 @@ const Projekti = () => {
               </div>
             </div>
           </div>
-          <div className="w-full">slider</div>
+          <div className="w-full xl:w-[50%]">
+            <Swiper
+              spaceBetween={30}
+              slidesPerView={1}
+              className="xl:h-[520px] mb-12"
+              onSlideChange={handleSlideChange}
+            >
+              {projects.map((project, index) => {
+                return (
+                  <SwiperSlide key={index} className="w-full">
+                    <div className="h-[460px] relative group flex justify-center border-2 border-accent">
+                      {project.image}
+                    </div>{" "}
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          </div>
         </div>
       </div>
     </motion.section>
