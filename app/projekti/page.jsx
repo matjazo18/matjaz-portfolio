@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { BsArrowRight, BsGithub } from "react-icons/bs";
+import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 import {
   Tooltip,
   TooltipContent,
@@ -23,7 +23,6 @@ const projects = [
     title: "project 1",
     description: "Write-it-down ",
     stack: [
-      { name: "React" },
       { name: "JavaScript" },
       { name: "Tailwind.css" },
       { name: "Next.js" },
@@ -38,7 +37,7 @@ const projects = [
     title: "project 1",
     description: "Instructions page",
     stack: [
-      { name: "React" },
+      { name: "Next.js" },
       { name: "JavaScript" },
       { name: "Tailwind.css" },
     ],
@@ -52,7 +51,7 @@ const projects = [
     title: "project 1",
     description: "Instructions page ",
     stack: [
-      { name: "React" },
+      { name: "Next.js" },
       { name: "JavaScript" },
       { name: "Tailwind.css" },
     ],
@@ -61,6 +60,7 @@ const projects = [
     github: "",
   },
 ];
+const moveToNext = () => {};
 
 const Projekti = () => {
   const [project, setProject] = useState(projects[0]);
@@ -76,6 +76,37 @@ const Projekti = () => {
             <div>
               <div className="text-8xl leading-none font-extrabold  outline-text">
                 {project.num}{" "}
+              </div>
+              <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-5000 capitalize">
+                {project.category} project
+              </h2>
+              <p className="text-white/60">{project.description}</p>
+              {
+                <ul className="flex gap-4 ">
+                  {project.stack.map((item, index) => {
+                    return (
+                      <li key={index} className="text-xl text-accent">
+                        {item.name}
+                        {index !== project.stack.length - 1 && ","}
+                      </li>
+                    );
+                  })}
+                </ul>
+              }
+              <div className="border border-white/20"></div>
+              <div>
+                <Link href={project.live}>
+                  <TooltipProvider delayDuration={100}>
+                    <Tooltip>
+                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                        <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p className="capitalize">Live projects</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </Link>
               </div>
             </div>
           </div>
