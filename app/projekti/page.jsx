@@ -72,8 +72,8 @@ const Projekti = () => {
     >
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
-          <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
-            <div>
+          <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none ">
+            <div className="flex flex-col gap-y-[30px]">
               <div className="text-8xl leading-none font-extrabold  outline-text">
                 {project.num}{" "}
               </div>
@@ -81,9 +81,9 @@ const Projekti = () => {
                 {project.category} project
               </h2>
               <p className="text-white/60">{project.description}</p>
-              <ul className="flex  md:flex-nowrap gap-2">
+              <ul className="flex  flex-wrap md:flex-nowrap gap-2">
                 {project.stack.map((item, index) => (
-                  <li key={index} className="text-xl text-accent">
+                  <li key={index} className="text-xl text-accent ">
                     {item.name}
                     {index !== project.stack.length - 1 && ","}
                   </li>
