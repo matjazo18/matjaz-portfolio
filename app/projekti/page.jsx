@@ -81,25 +81,22 @@ const Projekti = () => {
                 {project.category} project
               </h2>
               <p className="text-white/60">{project.description}</p>
-              {
-                <ul className="flex gap-4 ">
-                  {project.stack.map((item, index) => {
-                    return (
-                      <li key={index} className="text-xl text-accent">
-                        {item.name}
-                        {index !== project.stack.length - 1 && ","}
-                      </li>
-                    );
-                  })}
-                </ul>
-              }
+              <ul className="flex  md:flex-nowrap gap-2">
+                {project.stack.map((item, index) => (
+                  <li key={index} className="text-xl text-accent">
+                    {item.name}
+                    {index !== project.stack.length - 1 && ","}
+                  </li>
+                ))}
+              </ul>
+
               <div className="border border-white/20"></div>
               <div>
                 <Link href={project.live}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
+                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group mt-2">
+                        <BsArrowUpRight className="text-white text-3xl group-hover:text-accent " />
                       </TooltipTrigger>
                       <TooltipContent>
                         <p className="capitalize">Live projects</p>
