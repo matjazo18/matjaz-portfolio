@@ -5,19 +5,19 @@ import CountUp from "react-countup";
 const stats = [
   {
     num: 3,
-    text: "programskih jezikov",
+    text: "programming languages",
   },
   {
     num: 6,
-    text: "končanih projektov",
+    text: "finished projects",
   },
   {
     num: 2,
-    text: "leti izkušenj",
+    text: "years of experience",
   },
   {
     num: 5000,
-    text: "vrstic kode",
+    text: "Lines of code",
   },
 ];
 

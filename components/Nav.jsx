@@ -4,11 +4,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const links = [
-  { name: "zaćetek", path: "/" },
-  { name: "izkušnje", path: "/services" },
+  { name: "Home", path: "/" },
+  { name: "Experience", path: "/services" },
   { name: "CV", path: "/cv" },
-  { name: "projekti", path: "/projekti" },
-  { name: "kontakti", path: "/kontakti" },
+  { name: "Projects", path: "/projekti" },
+  { name: "Contacts", path: "/kontakti" },
 ];
 const Nav = () => {
   const pathname = usePathname();

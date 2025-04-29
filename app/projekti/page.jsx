@@ -31,13 +31,13 @@ const projects = [
       { name: "Next.js" },
     ],
     image: write,
-    live: "https://matjaz-portfolio.vercel.app/",
+    live: "https://write-it-down.com/",
   },
   {
     num: "02",
     category: "frontend and backend",
     title: "project 1",
-    description: "Instructions page",
+    description: "I've made myself a nice portfolio page",
     stack: [
       { name: "Next.js" },
       { name: "JavaScript" },
@@ -51,15 +51,15 @@ const projects = [
     num: "03",
     category: "frontend and backend",
     title: "project 1",
-    description: "Instructions page ",
+    description:
+      "This app lets you book a study session with your Instructor. You can select between high school subjects or even subjects in IB program ",
     stack: [
       { name: "Next.js" },
       { name: "JavaScript" },
       { name: "Tailwind.css" },
     ],
     image: andraz,
-    live: "",
-    github: "",
+    live: "https://andraz-ib-page.vercel.app/",
   },
 ];
 
@@ -161,14 +161,14 @@ const Projekti = () => {
               {projects.map((project, index) => {
                 return (
                   <SwiperSlide key={index} className="w-full">
-                    <div className="h-[460px] relative group flex justify-center ">
+                    <div className="h-[300px] xl:h-[460px] relative group flex justify-center border-2">
                       <div></div>
                       <div className="relative w-full h-full">
                         <Image
                           src={project.image}
                           fill
                           className="object-cover"
-                          alt={project.name}
+                          alt=""
                         ></Image>
                       </div>
                     </div>{" "}

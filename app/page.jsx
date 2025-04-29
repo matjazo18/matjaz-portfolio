@@ -20,16 +20,15 @@ const Home = () => {
             <div>
               <span className="text-xl">Software Developer</span>
               <h1 className="h1 my-4">
-                Živjo,
+                Hello,
                 <br />
-                ime mi je
+                my name is
                 <br />
                 <span className="text-accent">Matjaž Gazvoda</span>
               </h1>
               <p className="max-w-[500px] mb-9 text-white/80">
-                Sem razvijalec programske opreme, ki se osredotoča na
-                ustvarjanje uporabniških izkušenj, ki so tako funkcionalne kot
-                privlačne.
+                I'm a software developer dedicated to crafting user experiences
+                that are not only highly functional but also visually engaging.
               </p>
             </div>
 
@@ -40,7 +39,7 @@ const Home = () => {
                 variant="outline"
                 size="lg"
               >
-                <span>PRENESI CV</span>
+                <span>DOWNLOAD CV</span>
                 <FiDownload className="text-xl" />
               </Button>
               <div>

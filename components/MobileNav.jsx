@@ -12,10 +12,10 @@ import Link from "next/link";
 import { CiMenuFries } from "react-icons/ci";
 
 const links = [
-  { name: "izkušnje", path: "/services" },
+  { name: "Experience", path: "/services" },
   { name: "CV", path: "/cv" },
-  { name: "projekti", path: "/projekti" },
-  { name: "kontakti", path: "/kontakti" },
+  { name: "Projects", path: "/projekti" },
+  { name: "Contacts", path: "/kontakti" },
 ];
 
 const MobileNav = () => {
