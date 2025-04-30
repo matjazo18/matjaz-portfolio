@@ -6,7 +6,7 @@ import Photo from "@/components/Photo";
 import Stats from "@/components/Stats";
 
 // kle moras samo order spremenit ce te bo kej fukal
-
+// wtf
 const Home = () => {
   return (
     <section className="h-full">
