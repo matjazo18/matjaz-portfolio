@@ -12,7 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
   SelectItem,
-} from "@radix-ui/react-select";
+} from "@/components/ui/select";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { Description } from "@radix-ui/react-dialog";
 
@@ -54,26 +54,29 @@ const Kontakti = () => {
               <p className=" text-white/60">Some desription</p>
               <div className="grid grid-cols-1 md:grid-cols-2  gap-6">
                 <Input type="firstname" placeholder="FirstName" />
-
                 <Input type="lastname" placeholder="Lastname" />
-
                 <Input type="email" placeholder="Email" />
-
                 <Input type="phone" placeholder="Phone" />
               </div>
               <Select>
-                <SelectTrigger>
+                <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
-                    <SelectLabel>Select a service</SelectLabel>
+                    <SelectLabel className="text-xl">
+                      Select a service
+                    </SelectLabel>
                     <SelectItem value="est">Web Development</SelectItem>
-                    <SelectItem value="est">UI/UX </SelectItem>
-                    <SelectItem value="cst"></SelectItem>
+                    <SelectItem value="cst">UI/UX </SelectItem>
+                    <SelectItem value="mst"> Logo Design</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
+              <Textarea
+                className="h-[200px]"
+                placeholder="Type your message here "
+              ></Textarea>
             </form>
           </div>
 
