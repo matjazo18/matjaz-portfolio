@@ -17,6 +17,7 @@ import Image from "next/image";
 import foto from "@/public/images/matjaz.jpg";
 import write from "@/public/images/write-it-down.jpg";
 import andraz from "@/public/images/andraz.jpg";
+import WorkSlideBtns from "@/components/WokSlideBtns";
 
 const projects = [
   {
@@ -162,7 +163,7 @@ const Projekti = () => {
                 return (
                   <SwiperSlide key={index} className="w-full">
                     <div className="h-[300px] xl:h-[460px] relative group flex justify-center border-2">
-                      <div></div>
+                      <div className="absolute top-0 bottom-0 w-full h-full bg-blac/10 z-10 "></div>
                       <div className="relative w-full h-full">
                         <Image
                           src={project.image}
@@ -175,6 +176,10 @@ const Projekti = () => {
                   </SwiperSlide>
                 );
               })}
+              <WorkSlideBtns
+                containerStyles="flex gap-2 absolute justify-between right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
+                btnStyles="w-12 h-12 bg-accent flex justify-center items-center  hover:bg-accent-hover transition-all text-primary"
+              />
             </Swiper>
           </motion.div>
         </div>
