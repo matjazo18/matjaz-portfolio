@@ -20,12 +20,12 @@ const info = [
   {
     icon: <FaPhoneAlt />,
     name: "Phone",
-    Description: "your.email@gmail.com",
+    Description: "000 000 000 ",
   },
   {
     icon: <FaEnvelope />,
     name: "Email",
-    Description: "000 000 000",
+    Description: "your.email@gmail.com",
   },
   {
     icon: <FaMapMarkerAlt />,
@@ -52,7 +52,7 @@ const Kontakti = () => {
             <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
               <h3 className=" text-4xl text-accent">let's work together</h3>
               <p className=" text-white/60">Some desription</p>
-              <div className="grid grid-cols-1 md:grid-cols-2  gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Input type="firstname" placeholder="FirstName" />
                 <Input type="lastname" placeholder="Lastname" />
                 <Input type="email" placeholder="Email" />
@@ -77,11 +77,28 @@ const Kontakti = () => {
                 className="h-[200px]"
                 placeholder="Type your message here "
               ></Textarea>
+              <Button size="md" className="py-3 flex justify-center ">
+                Send message
+              </Button>
             </form>
           </div>
 
           <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none xl:mb-0 ">
-            d
+            <ul className="flex flex-col gap-6">
+              {info.map((item, index) => {
+                return (
+                  <li key={index} className="flex gap-6 items-center">
+                    <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px]  text-accent flex items-center">
+                      <div className="text-[28px] ">{item.icon}</div>
+                    </div>
+                    <div className="flex flex-col justify-center   ">
+                      <div className="text-white/60">{item.name}</div>
+                      <div>{item.Description}</div>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         </div>
       </div>
