@@ -44,12 +44,15 @@ const Blog = () => {
   return (
     <motion.section className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0">
       <div className="container mx-auto ">
+        <h1 className="text-2xl xl:text-4xl text-accent mb-8 text-center xl:text-left">
+          BLOG<span className="text-white ">PAGE</span>
+        </h1>
         <Tabs
           defaultValue={blogs[0].name}
           className="flex flex-col xl:flex-row gap-[60px]"
         >
           <ScrollArea className="h-[200px] xl:h-[400px]">
-            <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6 justify-center items-center">
+            <TabsList className="flex flex-col w-full max-w-[380px]  mx-auto xl:mx-0 gap-6 justify-center items-center">
               {blogs.map((item, index) => (
                 <TabsTrigger
                   value={item.name}
@@ -69,7 +72,9 @@ const Blog = () => {
                 value={item.name}
                 className="text-white w-full"
               >
-                <h3 className="text-accent text-3xl ">{item.name}</h3>
+                <h3 className="text-accent text-3xl xl:text-5xl font-extrabold ">
+                  {item.name}
+                </h3>
                 <h2 className="text-white/60 text-[15px] font-light my-2">
                   {item.description}
                 </h2>
