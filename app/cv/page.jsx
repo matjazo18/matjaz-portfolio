@@ -163,7 +163,7 @@ const Cv = () => {
             <TabsTrigger value="experience">Experience</TabsTrigger>
             <TabsTrigger value="education">Education</TabsTrigger>
             <TabsTrigger value="skills">Skill list</TabsTrigger>
-            <TabsTrigger value="about">about me </TabsTrigger>
+            <TabsTrigger value="about">About me </TabsTrigger>
           </TabsList>
           <div className="min-h-[70vh] w-full">
             <TabsContent value="experience" className="w-full">
