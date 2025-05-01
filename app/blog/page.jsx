@@ -6,6 +6,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 const Blog = () => {
   const blogs = [
@@ -49,37 +50,35 @@ const Blog = () => {
           </h1>
         </div>
         <Tabs
-          defaultValue="experience"
+          defaultValue={blogs[0].name}
           className="flex flex-col xl:flex-row gap-[60px]"
         >
-          <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
-            {blogs.map((item, index) => {
-              return (
-                <div className="flex">
-                  <div>
-                    <TabsTrigger value={item.name} key={index}>
-                      {item.name}
-                    </TabsTrigger>
-                  </div>
-                </div>
-              );
-            })}
-            <div>
-              {blogs.map((item, index) => {
-                return (
-                  <>
-                    <TabsContent
-                      value={item.name + 1}
-                      key={index}
-                      className="text-white"
-                    >
-                      {item.description}
-                    </TabsContent>
-                  </>
-                );
-              })}
-            </div>
-          </TabsList>
+          <ScrollArea className="max-h-[20vh] xl:max-h-[50vh]">
+            <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6 justify-center items-center">
+              {blogs.map((item, index) => (
+                <TabsTrigger
+                  value={item.name}
+                  key={index}
+                  className="w-[300px]"
+                >
+                  {item.name}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </ScrollArea>
+
+          <div className="min-h-[70vh] w-full">
+            {blogs.map((item, index) => (
+              <TabsContent
+                key={index}
+                value={item.name}
+                className="text-white w-full"
+              >
+                <h3 className="text-accent text-3xl mb-2">{item.name}</h3>
+                {item.content}
+              </TabsContent>
+            ))}
+          </div>
         </Tabs>
       </div>
     </motion.section>
