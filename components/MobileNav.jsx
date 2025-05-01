@@ -12,7 +12,7 @@ import Link from "next/link";
 import { CiMenuFries } from "react-icons/ci";
 
 const links = [
-  { name: "Experience", path: "/services" },
+  { name: "Blog", path: "/blog" },
   { name: "CV", path: "/cv" },
   { name: "Projects", path: "/projekti" },
   { name: "Contacts", path: "/kontakti" },
