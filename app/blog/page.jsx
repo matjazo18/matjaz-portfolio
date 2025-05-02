@@ -8,7 +8,10 @@ import {
 } from "@/components/ui/tooltip";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Image from "next/image";
 import { useState } from "react";
+
+import Link from "next/link";
 
 const Blog = () => {
   const [blogs, setBlogs] = useState(0);
@@ -23,6 +26,8 @@ const Blog = () => {
         blogs1.push({
           name: data.results[i].title,
           description: data.results[i].description,
+          link: data.results[i].link,
+          image: data.results[i].image_url,
         });
       }
       setBlogs(blogs1);
@@ -77,7 +82,24 @@ const Blog = () => {
                     <h2 className="text-white/60 text-[15px] font-light my-2">
                       {item.description}
                     </h2>
-                    {item.content}
+
+                    {item.image ? (
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        height={300}
+                        width={300}
+                      ></img>
+                    ) : (
+                      <></>
+                    )}
+
+                    <Link
+                      href={item.link}
+                      className="px-8 py-4 bg-accent text-white hover:accent-hover"
+                    >
+                      link
+                    </Link>
                   </TabsContent>
                 ))}
               </div>
