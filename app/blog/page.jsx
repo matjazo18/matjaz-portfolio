@@ -8,83 +8,84 @@ import {
 } from "@/components/ui/tooltip";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-const Blog = () => {
-  const blogs = [
-    {
-      name: "Top 5 LLM Models of 2024",
-      description: "The world is surrounded by LLMs",
-      content:
-        "The British company called Prime has recently launched their new LLM model, joining the ranks of OpenAI, Anthropic, and Google DeepMind. This article explores the latest advancements in large language models.",
-    },
-    {
-      name: "How to Build a Neural Network from Scratch",
-      description: "A beginner-friendly guide to AI development",
-      content:
-        "Learn the fundamentals of neural networks by coding one in Python. This tutorial covers forward propagation, backpropagation, and gradient descent with practical examples.",
-    },
-    {
-      name: "The Future of AI in Software Engineering",
-      description: "Will AI replace programmers?",
-      content:
-        "With tools like GitHub Copilot and ChatGPT, AI is transforming how we write code. This blog discusses the impact of AI on software development jobs and skills.",
-    },
-    {
-      name: "Python vs. Rust for AI Development",
-      description: "Which language should you learn in 2024?",
-      content:
-        "Python dominates AI research, but Rust is gaining traction for performance-critical applications. We compare their strengths, weaknesses, and use cases in machine learning.",
-    },
-    {
-      name: "Ethical AI: Bias and Fairness in Machine Learning",
-      description: "How to build responsible AI systems",
-      content:
-        "AI models can inherit biases from training data. This post explores techniques for detecting and mitigating bias in datasets and algorithms.",
-    },
-  ];
-  return (
-    <motion.section className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0">
-      <div className="container mx-auto ">
-        <h1 className="text-2xl xl:text-4xl text-accent mb-8 text-center xl:text-left">
-          BLOG<span className="text-white ">PAGE</span>
-        </h1>
-        <Tabs
-          defaultValue={blogs[0].name}
-          className="flex flex-col xl:flex-row gap-[60px]"
-        >
-          <ScrollArea className="h-[200px] xl:h-[400px]">
-            <TabsList className="flex flex-col w-full max-w-[380px]  mx-auto xl:mx-0 gap-6 justify-center items-center">
-              {blogs.map((item, index) => (
-                <TabsTrigger
-                  value={item.name}
-                  key={index}
-                  className="w-[300px]"
-                >
-                  {item.name}
-                </TabsTrigger>
-              ))}
-            </TabsList>
-          </ScrollArea>
+import { useState } from "react";
 
-          <div className="xl:min-h-[70vh]  w-full">
-            {blogs.map((item, index) => (
-              <TabsContent
-                key={index}
-                value={item.name}
-                className="text-white w-full"
-              >
-                <h3 className="text-accent text-3xl xl:text-5xl font-extrabold ">
-                  {item.name}
-                </h3>
-                <h2 className="text-white/60 text-[15px] font-light my-2">
-                  {item.description}
-                </h2>
-                {item.content}
-              </TabsContent>
-            ))}
+const Blog = () => {
+  const [blogs, setBlogs] = useState(0);
+  let blogs1 = [];
+  async function GetNews() {
+    try {
+      let response = await fetch(
+        "https://newsdata.io/api/1/news?apikey=pub_8432949097cbb6dc5397906b1c280d8ea8c9b&q=technology"
+      );
+      let data = await response.json();
+      for (let i = 0; i < data.results.length; i++) {
+        blogs1.push({
+          name: data.results[i].title,
+          description: data.results[i].description,
+        });
+      }
+      setBlogs(blogs1);
+
+      console.log(blogs);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  return (
+    <>
+      {!blogs ? (
+        <>
+          <button onClick={GetNews}>click me</button>
+        </>
+      ) : (
+        <motion.section className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0">
+          <div className="container mx-auto ">
+            <h1 className="text-2xl xl:text-4xl text-accent mb-8 text-center xl:text-left">
+              BLOG<span className="text-white ">PAGE</span>
+            </h1>
+            <button onClick={GetNews}>click me</button>
+            <Tabs
+              defaultValue={blogs.name}
+              className="flex flex-col xl:flex-row gap-[60px]"
+            >
+              <ScrollArea className="h-[200px] xl:h-[400px]">
+                <TabsList className="flex flex-col w-full max-w-[380px]  mx-auto xl:mx-0 gap-6 justify-center items-center">
+                  {blogs.map((item, index) => (
+                    <TabsTrigger
+                      value={item.name}
+                      key={index}
+                      className="w-[300px]"
+                    >
+                      {item.name}
+                    </TabsTrigger>
+                  ))}
+                </TabsList>
+              </ScrollArea>
+
+              <div className="xl:min-h-[70vh]  w-full">
+                {blogs.map((item, index) => (
+                  <TabsContent
+                    key={index}
+                    value={item.name}
+                    className="text-white w-full"
+                  >
+                    <h3 className="text-accent text-3xl xl:text-5xl font-extrabold ">
+                      {item.name}
+                    </h3>
+                    <h2 className="text-white/60 text-[15px] font-light my-2">
+                      {item.description}
+                    </h2>
+                    {item.content}
+                  </TabsContent>
+                ))}
+              </div>
+            </Tabs>
           </div>
-        </Tabs>
-      </div>
-    </motion.section>
+        </motion.section>
+      )}
+    </>
   );
 };
 
