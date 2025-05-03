@@ -17,7 +17,8 @@ import { Scroll } from "lucide-react";
 
 const about = {
   title: "About me ",
-  description: "Sem mlad študent",
+  description:
+    "I am a young self-taught software developer. I like reading, exercising, and building cool projects. I enjoy doing things differently, and I hate the word average (:",
   info: [
     {
       fieldName: "Name",
@@ -49,37 +50,17 @@ const about = {
 
 const experience = {
   icon: "",
-  title: "Moje izkušnje",
-  description: "Pretekla dela, ki sem jih opravljal",
+  title: "My experiences",
+  description: "Previous work I've done",
   items: [
     {
-      podjetje: "ROk",
-      pozicija: "Animator otrok",
-      trajanje: "Poletje 2024,2025",
+      podjetje: "Terme Krka, Dolenjske Toplice",
+      pozicija: "Preparing everything for the event",
+      trajanje: "Summer 2024,2025",
     },
     {
-      podjetje: "ROk",
-      pozicija: "Animator otrok",
-      trajanje: "Poletje 2024,2025",
-    },
-    {
-      podjetje: "ROk",
-      pozicija: "Animator otrok",
-      trajanje: "Poletje 2024,2025",
-    },
-    {
-      podjetje: "ROk",
-      pozicija: "Animator otrok",
-      trajanje: "Poletje 2024,2025",
-    },
-    {
-      podjetje: "ROk",
-      pozicija: "Animator otrok",
-      trajanje: "Poletje 2024,2025",
-    },
-    {
-      podjetje: "ROk",
-      pozicija: "Animator otrok",
+      podjetje: "PRIA, ROK BLATNIK S.P",
+      pozicija: "Animator for children",
       trajanje: "Poletje 2024,2025",
     },
   ],
@@ -87,7 +68,7 @@ const experience = {
 
 const skills = {
   title: " My skills",
-  description: " bla bla bla",
+  description: "Programming languages, frameworks and apps I work with",
   skillList: [
     {
       icon: <FaPython />,
@@ -100,10 +81,6 @@ const skills = {
     {
       icon: <SiTailwindcss />,
       name: "Tailwind.css",
-    },
-    {
-      icon: <FaJs />,
-      name: "JavaScript",
     },
 
     {
@@ -123,7 +100,7 @@ const skills = {
 
 const education = {
   icon: "svg here",
-  title: "Šolanje",
+  title: "School",
   description: "Moje šolanje in izobraževanje, katere sem se udeležil",
   items: [
     {
@@ -133,13 +110,8 @@ const education = {
     },
     {
       institucija: "Gimnazija Novo mesto",
-      trajanje: "2021-2025 ",
+      trajanje: "2021-now ",
       kraj: "Novo mesto",
-    },
-    {
-      institucija: "Študij računalništva in informatike ",
-      trajanje: "2025-sedanjost",
-      kraj: "Ljubljana",
     },
   ],
 };

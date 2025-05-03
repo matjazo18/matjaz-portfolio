@@ -3,6 +3,8 @@
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
+import FormData from "form-data";
+import Mailgun from "mailgun.js";
 
 import {
   Select,
@@ -15,22 +17,36 @@ import {
 } from "@/components/ui/select";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { Description } from "@radix-ui/react-dialog";
+import axios from "axios";
+
+const hadnleSend = async () => {
+  try {
+    const res = await axios.post("/api/send-email", {
+      to: "matjaz.gazvoda@gmail.com",
+      subject: "Hello Matjaz",
+      text: "This is a message from your form.",
+    });
+    console.log(res);
+  } catch (e) {
+    console.log(e);
+  }
+};
 
 const info = [
   {
     icon: <FaPhoneAlt />,
     name: "Phone",
-    Description: "000 000 000 ",
+    Description: "068 923 063",
   },
   {
     icon: <FaEnvelope />,
     name: "Email",
-    Description: "your.email@gmail.com",
+    Description: "matjaz.gazvoda@gmail.com",
   },
   {
     icon: <FaMapMarkerAlt />,
     name: "Addres",
-    Description: "Code corner, Tech Town 1203123",
+    Description: "Trebnje / Novo mesto",
   },
 ];
 

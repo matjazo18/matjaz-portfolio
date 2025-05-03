@@ -3,9 +3,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+//add   { name: "Blog", path: "/blog" },
+
 const links = [
   { name: "Home", path: "/" },
-  { name: "Blog", path: "/blog" },
+
   { name: "CV", path: "/cv" },
   { name: "Projects", path: "/projekti" },
   { name: "Contacts", path: "/kontakti" },
