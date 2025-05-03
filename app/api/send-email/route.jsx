@@ -9,7 +9,7 @@ export async function POST(req) {
   console.log(mailgun);
   const mg = mailgun.client({
     username: "api",
-    key: "a9f252031c759da6e22da1cb7b093e44-67bd41c2-c680d454",
+    key: process.env.Email_api,
   });
   try {
     const result = await mg.messages.create(
