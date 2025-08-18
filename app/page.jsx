@@ -34,14 +34,16 @@ const Home = () => {
 
             {/* Button + Social - row on desktop, column on mobile */}
             <div className="flex flex-col xl:flex-row items-center gap-8 mt-8">
-              <Button
-                className="flex items-center uppercase gap-2 px-8 py-2"
-                variant="outline"
-                size="lg"
-              >
-                <span>DOWNLOAD CV</span>
-                <FiDownload className="text-xl" />
-              </Button>
+              <a href="/matjazo.pdf" download>
+                <Button
+                  className="flex items-center uppercase gap-2 px-8 py-2"
+                  variant="outline"
+                  size="lg"
+                >
+                  <span>DOWNLOAD CV</span>
+                  <FiDownload className="text-xl" />
+                </Button>
+              </a>
               <div>
                 <Social containerStyle="flex gap-6" />
               </div>
