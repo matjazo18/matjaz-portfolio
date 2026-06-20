@@ -43,7 +43,7 @@ const about = {
     },
     {
       fieldName: "School",
-      fieldValue: "FRI, Univerza v Ljubljani",
+      fieldValue: "Faculty of Computer Science, Ljubljana",
     },
   ],
 };
@@ -119,7 +119,7 @@ const education = {
       kraj: "Novo Mesto",
     },
     {
-      institucija: "Faculty of Computer & Information Science",
+      institucija: "Faculty of Computer Science",
       trajanje: "2025 - present",
       kraj: "Ljubljana",
     },
