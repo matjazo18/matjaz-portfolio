@@ -11,6 +11,8 @@ const jetbrainsMono = JetBrains_Mono({
   weights: ["100", "200", "300", "400", "500", "600", "700", "800"],
   variable: "--font-jetbrainsMono",
 });
+
+// Hey
 export const metadata = {
   title: "Matjaž Gazvoda",
   description: "Portfolio page",
