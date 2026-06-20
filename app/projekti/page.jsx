@@ -16,7 +16,8 @@ import Link from "next/link";
 import Image from "next/image";
 import foto from "@/public/images/matjaz.jpg";
 import write from "@/public/images/write-it-down.jpg";
-import andraz from "@/public/images/andraz.jpg";
+import rwm from "@/public/images/read-what-matters.jpg";
+import cleanline from "@/public/images/cleanline.jpg";
 import WorkSlideBtns from "@/components/WokSlideBtns";
 
 const projects = [
@@ -51,20 +52,6 @@ const projects = [
   {
     num: "03",
     category: "frontend and backend",
-    title: "Andraž IB page",
-    description:
-      "This app lets you book a study session with your Instructor. You can select between high school subjects or even subjects in IB program.",
-    stack: [
-      { name: "Next.js" },
-      { name: "JavaScript" },
-      { name: "Tailwind.css" },
-    ],
-    image: andraz,
-    live: "https://andraz-ib-page.vercel.app/",
-  },
-  {
-    num: "04",
-    category: "frontend and backend",
     title: "Read What Matters",
     description:
       "A reading-focused web app that helps users discover and track books that are actually worth their time. Built to cut through the noise and surface meaningful reads tailored to your interests.",
@@ -73,12 +60,12 @@ const projects = [
       { name: "JavaScript" },
       { name: "Tailwind.css" },
     ],
-    image: write,
+    image: rwm,
     live: "https://read-what-matters.com/",
   },
   {
-    num: "05",
-    category: "frontend and backend",
+    num: "04",
+    category: "frontend",
     title: "Cleanline",
     description:
       "A simple cleaning service landing page built with plain HTML. Clean layout, straightforward design — no frameworks, just HTML and CSS doing the work.",
@@ -86,7 +73,7 @@ const projects = [
       { name: "HTML" },
       { name: "CSS" },
     ],
-    image: foto,
+    image: cleanline,
     live: "https://cleanline.com/",
   },
 ];

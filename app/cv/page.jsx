@@ -43,7 +43,7 @@ const about = {
     },
     {
       fieldName: "School",
-      fieldValue: "FRI, Univerza v Ljubljani",
+      fieldValue: "Faculty of Computer Science, Ljubljana",
     },
   ],
 };
@@ -105,21 +105,21 @@ const skills = {
 
 const education = {
   icon: "svg here",
-  title: "School",
-  description: "Moje šolanje in izobraževanje, katere sem se udeležil",
+  title: "Education",
+  description: "My education and the institutions I have attended",
   items: [
     {
-      institucija: "Osnovna šola Trebnje",
+      institucija: "Trebnje Primary School",
       trajanje: "2017-2021",
       kraj: "Trebnje",
     },
     {
-      institucija: "Gimnazija Novo mesto",
+      institucija: "Novo Mesto Grammar School",
       trajanje: "2021-2025",
-      kraj: "Novo mesto",
+      kraj: "Novo Mesto",
     },
     {
-      institucija: "Fakulteta za računalništvo in informatiko",
+      institucija: "Faculty of Computer Science",
       trajanje: "2025 - present",
       kraj: "Ljubljana",
     },
@@ -160,14 +160,14 @@ const Cv = () => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                          className="bg-[#232329] min-h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                         >
                           <span className="text-accent">{item.trajanje}</span>
-                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left break-words">
                             {item.pozicija}
                           </h3>
                           <div className="flex items-center justify-center gap-3">
-                            <span className="h-[6px] w-[6px] bg-accent rounded-full"></span>
+                            <span className="h-[6px] w-[6px] bg-accent rounded-full flex-shrink-0"></span>
                             <p className="text-white/60">{item.podjetje}</p>
                           </div>
                         </li>
@@ -189,14 +189,14 @@ const Cv = () => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                          className="bg-[#232329] min-h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                         >
                           <span className="text-accent">{item.trajanje}</span>
-                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left break-words">
                             {item.institucija}
                           </h3>
                           <div className="flex items-center justify-center gap-3">
-                            <span className="h-[6px] w-[6px] bg-accent rounded-full"></span>
+                            <span className="h-[6px] w-[6px] bg-accent rounded-full flex-shrink-0"></span>
                             <p className="text-white/60">{item.kraj}</p>
                           </div>
                         </li>
