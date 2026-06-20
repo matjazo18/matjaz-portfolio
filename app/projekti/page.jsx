@@ -23,7 +23,7 @@ const projects = [
   {
     num: "01",
     category: "frontend",
-    title: "project 1",
+    title: "Write it down",
     description:
       "I've built this page for a friend of mine who wanted a landing page for his personal finance tracker. For each user who wants to download the finance tracker, I send them an email with a copy of it and then store the user in the MongoDB database.",
     stack: [
@@ -37,7 +37,7 @@ const projects = [
   {
     num: "02",
     category: "frontend and backend",
-    title: "project 1",
+    title: "Portfolio",
     description: "I've made myself a nice portfolio page",
     stack: [
       { name: "Next.js" },
@@ -51,9 +51,9 @@ const projects = [
   {
     num: "03",
     category: "frontend and backend",
-    title: "project 1",
+    title: "Andraž IB page",
     description:
-      "This app lets you book a study session with your Instructor. You can select between high school subjects or even subjects in IB program ",
+      "This app lets you book a study session with your Instructor. You can select between high school subjects or even subjects in IB program.",
     stack: [
       { name: "Next.js" },
       { name: "JavaScript" },
@@ -61,6 +61,34 @@ const projects = [
     ],
     image: andraz,
     live: "https://andraz-ib-page.vercel.app/",
+  },
+  {
+    num: "04",
+    category: "frontend and backend",
+    title: "Read What Matters",
+    description:
+      "A reading-focused web app that helps users discover and track books that are actually worth their time. Built to cut through the noise and surface meaningful reads tailored to your interests.",
+    stack: [
+      { name: "Next.js" },
+      { name: "JavaScript" },
+      { name: "Tailwind.css" },
+    ],
+    image: write,
+    live: "https://read-what-matters.com/",
+  },
+  {
+    num: "05",
+    category: "frontend and backend",
+    title: "Cleanline",
+    description:
+      "A sleek SaaS platform designed to streamline cleaning service bookings and management. Clients can schedule appointments, track service status, and communicate with cleaners — all from a clean, intuitive interface.",
+    stack: [
+      { name: "Next.js" },
+      { name: "JavaScript" },
+      { name: "Tailwind.css" },
+    ],
+    image: foto,
+    live: "https://cleanline.com/",
   },
 ];
 

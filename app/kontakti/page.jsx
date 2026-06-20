@@ -1,10 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
-import FormData from "form-data";
-import Mailgun from "mailgun.js";
 
 import {
   Select,
@@ -16,21 +15,8 @@ import {
   SelectItem,
 } from "@/components/ui/select";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import { Description } from "@radix-ui/react-dialog";
-import axios from "axios";
 
-const hadnleSend = async () => {
-  try {
-    const res = await axios.post("/api/send-email", {
-      to: "matjaz.gazvoda@gmail.com",
-      subject: "Hello Matjaz",
-      text: "This is a message from your form.",
-    });
-    console.log(res);
-  } catch (e) {
-    console.log(e);
-  }
-};
+import { motion } from "framer-motion";
 
 const info = [
   {
@@ -45,14 +31,40 @@ const info = [
   },
   {
     icon: <FaMapMarkerAlt />,
-    name: "Addres",
+    name: "Address",
     Description: "Trebnje / Novo mesto",
   },
 ];
 
-import { motion } from "framer-motion";
-
 const Kontakti = () => {
+  const [form, setForm] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleServiceChange = (value) => {
+    setForm({ ...form, service: value });
+  };
+
+  const handleSend = (e) => {
+    e.preventDefault();
+    const subject = encodeURIComponent(
+      `${form.service ? `[${form.service}] ` : ""}Contact from ${form.firstname} ${form.lastname}`.trim()
+    );
+    const body = encodeURIComponent(
+      `From: ${form.firstname} ${form.lastname}\nEmail: ${form.email}\nPhone: ${form.phone}\nService: ${form.service}\n\n${form.message}`
+    );
+    window.location.href = `mailto:matjaz.gazvoda@gmail.com?subject=${subject}&body=${body}`;
+  };
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -65,16 +77,46 @@ const Kontakti = () => {
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row gap-[30px] ">
           <div className="xl:h-[54%] order-2 xl:order-none">
-            <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
+            <form
+              onSubmit={handleSend}
+              className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
+            >
               <h3 className=" text-4xl text-accent">let's work together</h3>
-              <p className=" text-white/60">Some desription</p>
+              <p className=" text-white/60">
+                Fill in the form and your email client will open so you can send
+                me a message directly.
+              </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="firstname" placeholder="FirstName" />
-                <Input type="lastname" placeholder="Lastname" />
-                <Input type="email" placeholder="Email" />
-                <Input type="phone" placeholder="Phone" />
+                <Input
+                  name="firstname"
+                  type="text"
+                  placeholder="First Name"
+                  value={form.firstname}
+                  onChange={handleChange}
+                />
+                <Input
+                  name="lastname"
+                  type="text"
+                  placeholder="Last Name"
+                  value={form.lastname}
+                  onChange={handleChange}
+                />
+                <Input
+                  name="email"
+                  type="email"
+                  placeholder="Email"
+                  value={form.email}
+                  onChange={handleChange}
+                />
+                <Input
+                  name="phone"
+                  type="tel"
+                  placeholder="Phone"
+                  value={form.phone}
+                  onChange={handleChange}
+                />
               </div>
-              <Select>
+              <Select onValueChange={handleServiceChange}>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
@@ -83,17 +125,20 @@ const Kontakti = () => {
                     <SelectLabel className="text-xl">
                       Select a service
                     </SelectLabel>
-                    <SelectItem value="est">Web Development</SelectItem>
-                    <SelectItem value="cst">UI/UX </SelectItem>
-                    <SelectItem value="mst"> Logo Design</SelectItem>
+                    <SelectItem value="Web Development">Web Development</SelectItem>
+                    <SelectItem value="UI/UX Design">UI/UX Design</SelectItem>
+                    <SelectItem value="Logo Design">Logo Design</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
               <Textarea
+                name="message"
                 className="h-[200px]"
-                placeholder="Type your message here "
+                placeholder="Type your message here"
+                value={form.message}
+                onChange={handleChange}
               ></Textarea>
-              <Button size="md" className="py-3 flex justify-center ">
+              <Button type="submit" size="md" className="py-3 flex justify-center ">
                 Send message
               </Button>
             </form>

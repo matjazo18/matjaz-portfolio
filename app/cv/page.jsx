@@ -26,7 +26,7 @@ const about = {
     },
     {
       fieldName: "Age",
-      fieldValue: "19",
+      fieldValue: "20",
     },
     {
       fieldName: "Phone",
@@ -43,7 +43,7 @@ const about = {
     },
     {
       fieldName: "School",
-      fieldValue: "Gimnazija Novo mesto",
+      fieldValue: "FRI, Univerza v Ljubljani",
     },
   ],
 };
@@ -56,12 +56,17 @@ const experience = {
     {
       podjetje: "Terme Krka, Dolenjske Toplice",
       pozicija: "Preparing everything for the event",
-      trajanje: "Summer 2024,2025",
+      trajanje: "Summer 2024, 2025",
     },
     {
       podjetje: "PRIA, ROK BLATNIK S.P",
       pozicija: "Animator for children",
-      trajanje: "Poletje 2024,2025",
+      trajanje: "Summer 2024, 2025",
+    },
+    {
+      podjetje: "Freelance",
+      pozicija: "Cold calling & lead generation",
+      trajanje: "2025 - present",
     },
   ],
 };
@@ -110,8 +115,13 @@ const education = {
     },
     {
       institucija: "Gimnazija Novo mesto",
-      trajanje: "2021-now ",
+      trajanje: "2021-2025",
       kraj: "Novo mesto",
+    },
+    {
+      institucija: "Fakulteta za računalništvo in informatiko",
+      trajanje: "2025 - present",
+      kraj: "Ljubljana",
     },
   ],
 };
