@@ -81,11 +81,10 @@ const projects = [
     category: "frontend and backend",
     title: "Cleanline",
     description:
-      "A sleek SaaS platform designed to streamline cleaning service bookings and management. Clients can schedule appointments, track service status, and communicate with cleaners — all from a clean, intuitive interface.",
+      "A simple cleaning service landing page built with plain HTML. Clean layout, straightforward design — no frameworks, just HTML and CSS doing the work.",
     stack: [
-      { name: "Next.js" },
-      { name: "JavaScript" },
-      { name: "Tailwind.css" },
+      { name: "HTML" },
+      { name: "CSS" },
     ],
     image: foto,
     live: "https://cleanline.com/",

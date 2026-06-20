@@ -66,7 +66,7 @@ const experience = {
     {
       podjetje: "Freelance",
       pozicija: "Cold calling & lead generation",
-      trajanje: "2025 - present",
+      trajanje: "2025 (3 months)",
     },
   ],
 };
